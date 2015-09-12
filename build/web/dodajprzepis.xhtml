@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./oneColumnTemplate.xhtml">
+
+            <ui:define name="title">
+                DrinkBar - dodaj przepis
+            </ui:define>
+
+            <ui:define name="header">
+            </ui:define>
+
+            <ui:define name="menu">
+            </ui:define>
+
+            <ui:define name="con">
+                <f:view>
+                    <h:form>
+                        <h1>Dodaj drink</h1>
+                        Nazwa: <h:inputText id="nazwa" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.nazwa}" required="true" /> <h:message for="nazwa" style="color: red;"/><br/>
+                        Pochodzenie: <h:inputText id="pochodzenie" value="#{drinkiManagedBean.selected.pochodzenie}" required="false" /> <br/>
+                        Opis: <h:inputText id="opis" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.opis}" required="true" /> <h:message for="opis" style="color: red;"/><br/>
+                        Składniki: <h:inputText id="skladniki" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.skladniki}" required="true" /> <h:message for="skladniki" style="color: red;"/><br/>
+                        Naczynie do przygotowania: <h:inputText id="npodan" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.nprzyg}" required="true" /> <h:message for="nprzyg" style="color: red;"/><br/>
+                        Naczynie do podania: <h:inputText id="nprzyg" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.npodan}" required="true" /> <h:message for="npodan" style="color: red;"/><br/>
+                        Przygotowanie: <h:inputText id="przygotowanie" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.przygotowanie}" required="true" /> <h:message for="przygotowanie" style="color: red;"/><br/>
+                        E-mail: <h:inputText id="email" requiredMessage="Pole wymagane" value="#{drinkiManagedBean.selected.email}" required="true" /> <h:message for="email" style="color: red;"/><br/>
+                        
+                        <h:commandButton
+                            styleClass="przycisk"
+                            value="Dodaj"
+                            action="#{drinkiManagedBean.prepareSaveAndList()}"
+                        />
+                        
+                    </h:form>
+                </f:view>
+                <br/>
+                <f:view>
+                <h:form>
+                <h:commandLink action="#{drinkiManagedBean.prepareList()}" value="Powrót"/>
+                </h:form>
+                </f:view>
+                
+            </ui:define>
+
+            <ui:define name="footer">
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

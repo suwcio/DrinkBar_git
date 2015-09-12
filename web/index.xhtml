@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="resources/css/default.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="scripts/lightbox/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="scripts/lightbox/js/lightbox-2.6.min.js"></script>
+        <link href="resources/scripts/lightbox/css/lightbox.css" rel="stylesheet" />
+        <title>DrinkBar</title>
+    </h:head>
+    <h:body>
+        
+        <div id="header">
+            <h1><a href="#">Drink Bar</a></h1>
+            <h2><a href="#">you make everybody drink</a></h2>
+        </div>
+        
+        <div id="menu">
+            <ul>
+                <f:view><h:form><h:commandLink action="pokazIndex" value="HOME"/></h:form></f:view>
+                <!--<f:view><h:form><h:commandLink action="pokazDrinki" value="DRINKI"/></h:form></f:view>-->
+                <f:view><h:form><h:commandLink action="#{drinkiManagedBean.prepareList()}" value="DRINKI"/></h:form></f:view>
+		<!--<f:view><h:form><h:commandLink action="pokazDodajPrzepis" value="DODAJ PRZEPIS"/></h:form></f:view>-->
+                <f:view><h:form><h:commandLink action="#{drinkiManagedBean.prepareAdd()}" value="DODAJ PRZEPIS"/></h:form></f:view>
+                <f:view><h:form><h:commandLink action="pokazSlowniczek" value="SŁOWNICZEK"/></h:form></f:view>
+                <f:view><h:form><h:commandLink action="pokazKontakt" value="KONTAKT"/></h:form></f:view>
+            </ul>
+        </div>
+        
+        <div id="content">
+            <div id="colOne">
+                <h2>Cześć!</h2>
+                <div style="alignment-adjust: middle">
+                    <a href="resources/css/images/me.jpg" data-lightbox="me" title="Ja;)"><img src="resources/css/images/me_small.jpg" align="left" /></a>
+                </div>
+		<p>Na mojej stronie znajdziesz mnóstwo przepisów na najbardziej popularne drinki, shoty i koktajle. Podzielę się z Tobą swoimi doświadczeniami z przygotowań.</p>
+		<p>Wszystkie zdjęcia, które umieszczam na stronie wykonuję samodzielnie. Może z wyjątkiem zdjęć niektórych alkoholi. Niestety nie jestem w stanie posiadać ich aż w takich ilościach i mnogości gatunków w jakich występują.</p>
+                <p>Zapraszam do wspólnego eksperymentowania i próbowania własnych sił jako barman/barmanka.</p>
+                <p>Piotr</p>
+            </div>
+            <div id="colTwo">
+                <!--<h2>PRZYKŁADOWE DRINKI</h2>-->
+                
+                
+                <h2>LINKI</h2>
+		<ul>
+                    <li><a href="http://open-bar.pl/" target="blank">Open Bar</a></li>
+                    <li><a href="http://www.mojdrink.pl/" target="blank">Mój Drink</a></li>
+                    <li><a href="http://www.2drink.pl/" target="blank">2 drink</a></li>
+                    <li><a href="http://www.alkoholeswiata.pl/#" target="blank">Alkohole Świata</a></li>
+		</ul>
+                
+                <h2>LOGOWANIE</h2>
+                
+                <f:view>
+                <h:form>
+                    <h:outputText value="E-mail" />
+                    <h:inputText id="email" binding="#{email}"></h:inputText>
+                    <h:message for="email"></h:message>
+                    <br/>
+                    <h:outputText value="Hasło" />
+                    <h:inputSecret id="pass" binding="#{pass}"></h:inputSecret>
+                    <h:message for="pass"></h:message>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{usersManagedBean.login(email.value, pass.value)}" value="Login"/>
+                </h:form>
+                </f:view>
+                
+            </div>
+            
+            <div style="clear: both;">&nbsp;</div>
+            
+        </div>
+        <div id="footer">
+            <p>Copyright &copy; 2015 <a href=" mailto:suwcio@gmail.com"><strong>Drink Bar</strong></a></p>
+        </div>
+        
+    </h:body>
+</html>
+

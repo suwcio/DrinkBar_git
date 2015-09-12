@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-06-18 15:49:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="drinki.Drinki" table="DRINKI" schema="DRINKBAR" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="nazwa" type="string">
+            <column name="NAZWA" />
+        </property>
+        <property name="pochodzenie" type="string">
+            <column name="POCHODZENIE" />
+        </property>
+        <property name="opis" type="string">
+            <column name="OPIS" length="32700" />
+        </property>
+        <property name="skladniki" type="string">
+            <column name="SKLADNIKI" length="32700" />
+        </property>
+        <property name="nprzyg" type="string">
+            <column name="NPRZYG" />
+        </property>
+        <property name="npodan" type="string">
+            <column name="NPODAN" />
+        </property>
+        <property name="przygotowanie" type="string">
+            <column name="PRZYGOTOWANIE" length="32700" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" />
+        </property>
+        <property name="fotos" type="string">
+            <column name="FOTOS" />
+        </property>
+        <property name="fotom" type="string">
+            <column name="FOTOM" />
+        </property>
+        <property name="fotob" type="string">
+            <column name="FOTOB" />
+        </property>
+    </class>
+</hibernate-mapping>

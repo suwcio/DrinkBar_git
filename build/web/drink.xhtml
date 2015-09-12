@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./oneColumnTemplate.xhtml">
+
+            <ui:define name="title">
+                DrinkBar - <h:outputText value="#{drinkiManagedBean.selected.nazwa}"/>
+            </ui:define>
+
+            <ui:define name="header">
+            </ui:define>
+
+            <ui:define name="menu">
+            </ui:define>
+
+            <ui:define name="con">
+                <f:view>
+                    <h:form>
+                        <table>
+                        <tr>
+                        <td>
+                        <h:panelGrid columns="2">
+                            <h:outputText value="Nazwa"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.nazwa}"/>
+
+                            <h:outputText value="Pochodzenie"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.pochodzenie}"/>
+                            
+                            <h:outputText value="Opis"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.opis}"/>
+                            
+                            <h:outputText value="Składniki"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.skladniki}"/>
+                            
+                            <h:outputText value="Naczynie do przygotowania"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.nprzyg}"/>
+                            
+                            <h:outputText value="Naczynie do podania"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.npodan}"/>
+                            
+                            <h:outputText value="Przygotowanie"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.przygotowanie}"/>
+                            
+                            <h:outputText value="Autor"/>
+                            <h:outputText value="#{drinkiManagedBean.selected.email}"/>
+                            
+                        </h:panelGrid>
+                        </td>
+                            
+                        <td>
+                            <h:graphicImage value="#{drinkiManagedBean.selected.fotom}"/>
+                        </td>
+                            
+                        </tr>
+                        </table>
+                        <h:commandLink action="#{drinkiManagedBean.prepareList()}" value="Powrót"/>
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+            <ui:define name="footer">
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
